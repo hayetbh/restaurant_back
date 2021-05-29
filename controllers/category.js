@@ -42,7 +42,8 @@ exports.addcat=(req,res)=>{
     })
 
 }
-//deletecat
+//deletecat1
+/*
 exports.deletecat=(req,res)=>{
     client.query(`DELETE FROM category WHERE idres ='${req.body.idres}' `, function (err, result) {
         if (err) {
@@ -69,4 +70,4 @@ exports.deletecat=(req,res)=>{
     })
   
 
-}
+}*/
