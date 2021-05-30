@@ -27,6 +27,18 @@ exports.addcat=(req,res)=>{
         });
         return
       }
+    var newurlString=""
+    if(req.file!=undefined){
+        for(let i = 0;i<req.file.path.length;i++){
+            if(req.file.path[i]=='\\'){
+              newurlString+="/"
+            }else{
+              newurlString+=req.file.path[i]
+            }
+          }
+    }else{
+        newurlString=undefined
+    }
     client.query(`INSERT INTO category (name , image) VALUES ('${req.body.name}','${req.body.image}') `,(err,result)=>{
         if (err){
             res.status(res.statusCode).json({
